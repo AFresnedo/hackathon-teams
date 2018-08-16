@@ -25,4 +25,8 @@ router.get('/:name', function(req, res) {
   res.render('teams/show', { team: team });
 });
 
+router.delete('/teams/:name', function(req, res) {
+  res.send('delete request for ' + req.params.name + ' recieved');
+});
+
 module.exports = router;

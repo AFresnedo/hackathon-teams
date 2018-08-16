@@ -1,8 +1,12 @@
-<div>
-	<h2>
-	  <a href="/teams/<%= team.name %>"><%= team.name %></a>
-	</h2>
-	<p>
-	  <%= team.members %>
-	</p>
+<div class="container">
+  <h2>
+    <a href="/teams/<%= team.name %>"><%= team.name %></a>
+  </h2>
+  <p>
+  <%= team.members %>
+  </p>
+
+  <button id="del-team" type="button" class="btn btn-danger"
+                        href="/teams/<%= team.name %>"
+                        name="del-team-btn">Delete</button>
 </div>
