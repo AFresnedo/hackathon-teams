@@ -3,6 +3,8 @@ var fs = require('fs');
 var teamService = require('../models/teamService');
 var router = express.Router();
 
+// note: these paths are prepended by /teams
+
 router.get('/', function(req, res) {
   var teams = teamService.allTeams();
   res.render('teams/index', { teams: teams });
@@ -25,8 +27,14 @@ router.get('/:name', function(req, res) {
   res.render('teams/show', { team: team });
 });
 
-router.delete('/teams/:name', function(req, res) {
-  res.send('delete request for ' + req.params.name + ' recieved');
+router.delete('/:name', function(req, res) {
+  // get team name from url (ajax sent it)
+  var teamName = req.params.name;
+  console.log('after ajax, in delete team, got req.params.name:',
+    teamName);
+  // delete team using helper function in model
+  res.send('(data)delete request for ' + teamName + ' recieved(data)');
+  teamService.deleteTeam(teamName);
 });
 
 module.exports = router;
