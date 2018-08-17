@@ -6,7 +6,13 @@
   <%= team.members %>
   </p>
 
-  <button type="button" class="btn btn-danger del-team"
-                        href="/teams/<%= team.name %>"
-                        name="del-team-btn">Delete</button>
+  <!-- edit button -->
+  <button class="btn btn-warning edit-team" type="button"
+          href="/teams/<%= team.name %>/edit">
+          Edit</button>
+
+  <!-- delete button -->
+  <button class="btn btn-danger del-team" type="button"
+                                          href="/teams/<%= team.name %>"
+                                          name="del-team-btn">Delete</button>
 </div>

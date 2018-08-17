@@ -21,6 +21,9 @@ $(document).ready(function() {
 
   var editTeamPg = $('.edit-team-pg').click(function(e) {
     e.preventDefault();
+
+    // get url from form
+    var url = $(this).attr('action');
   });
 
 

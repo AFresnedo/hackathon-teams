@@ -27,13 +27,25 @@ router.get('/:name', function(req, res) {
   res.render('teams/show', { team: team });
 });
 
+router.get('/:name/edit', function(req, res) {
+  //
+  // pros/cons of render over redirect here?
+  // might need more info as to how login session works before
+  // deciding if render or redirect is best
+  //
+  // "name" is params because of .get defn above
+  var teamName = req.params.name;
+  res.render('/teams/edit');
+});
+
 router.delete('/:name', function(req, res) {
   // get team name from url (ajax sent it)
   var teamName = req.params.name;
   console.log('after ajax, in delete team, got req.params.name:',
     teamName);
-  // delete team using helper function in model
+  // send ajax a response
   res.send('(data)delete request for ' + teamName + ' recieved(data)');
+  // delete team using helper function in model
   teamService.deleteTeam(teamName);
 });
 
