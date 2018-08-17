@@ -36,7 +36,7 @@ router.get('/:name/edit', function(req, res) {
   // "name" is params because of .get defn above
   var teamName = req.params.name;
   // use name to get the team data, required for editing
-  var team = getTeam(teamName);
+  var team = teamService.getTeam(teamName);
   // render edit page and give the page the team info
   res.render('/teams/edit', { team: team });
 });
