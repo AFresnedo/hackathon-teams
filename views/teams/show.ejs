@@ -6,10 +6,9 @@
   <%= team.members %>
   </p>
 
-  <!-- edit button -->
-  <button class="btn btn-warning edit-team" type="button"
-          href="/teams/<%= team.name %>/edit">
-          Edit</button>
+  <a class="btn btn-warning edit-team" href="/teams/<%= team.name %>/edit">
+    Edit
+  </a>
 
   <!-- delete button -->
   <button class="btn btn-danger del-team" type="button"
