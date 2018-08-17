@@ -38,7 +38,7 @@ router.get('/:name/edit', function(req, res) {
   // use name to get the team data, required for editing
   var team = teamService.getTeam(teamName);
   // render edit page and give the page the team info
-  res.render('/teams/edit', { team: team });
+  res.render('teams/edit', { team: team });
 });
 
 router.delete('/:name', function(req, res) {
