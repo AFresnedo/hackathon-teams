@@ -1,1 +1,17 @@
-<h2> Edit Page for Team <%= team.name %></h2>
+<h2> Edit Page for Team
+  <span style="color:blue"><%= team.name %></span>
+</h2>
+
+<!-- no method for form because ajax is responsible for that -->
+<form>
+  <!-- edit team name -->
+  <div class="form-control">
+    <input type="text" value="<%= team.name %>" required />
+  </div>
+  <!-- edit team members -->
+  <div class="form-control">
+    <textarea required><%= team.members %></textarea>
+  </div>
+  <!-- submit button, ajax can see this with .submit -->
+  <button type="submit"></button>
+</form>
