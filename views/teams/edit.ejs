@@ -8,9 +8,11 @@
   <div class="form-group">
     <!-- edit team name -->
       <input class="form-control" type="text" value="<%= team.name %>"
+                                              name="team-name"
                                               required />
     <!-- edit team members -->
-    <textarea class="form-control" required><%= team.members %></textarea>
+    <textarea class="form-control" name="team-members"
+                                   required><%= team.members %></textarea>
   </div>
   <!-- submit button, ajax can see this with .submit -->
   <button class="btn btn-warning" type="submit">Confirm Edits</button>

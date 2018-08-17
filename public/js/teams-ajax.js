@@ -23,9 +23,8 @@ $(document).ready(function() {
     e.preventDefault();
 
     var url = $(this).attr('action');
-    // TODO check syntax
-    var data = $(this).serialize(data);
     console.log('url is', url);
+    var data = $(this).serialize(data);
     console.log('data is', data);
   });
 
